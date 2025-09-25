@@ -12,8 +12,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Calendar } from '@/components/ui/calendar'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import { format } from 'date-fns'
-import { CalendarIcon, Upload, Download, Phone, DollarSign, TrendingUp, Users, Clock, BarChart3, Settings } from 'lucide-react'
+import { CalendarIcon, Upload, Download, Phone, DollarSign, TrendingUp, Users, Clock, BarChart3, Settings, Activity } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { RealTimeMonitor } from '@/components/real-time-monitor'
+import { ProtectedRoute } from '@/components/protected-route'
+import { UserInfo } from '@/components/user-info'
 import { AgentPerformanceChart } from '@/components/charts/agent-performance-chart'
 import { TimeSeriesChart } from '@/components/charts/time-series-chart'
 import { PaymentConversionTracker } from '@/components/payment-conversion-tracker'
@@ -21,6 +24,9 @@ import { FilterPanel, FilterState } from '@/components/filter-panel'
 import { ExportPanel } from '@/components/export-panel'
 import { ColumnMapper } from '@/components/column-mapper'
 import { PaymentColumnMapper } from '@/components/payment-column-mapper'
+import { AdvancedFilterPanel } from '@/components/advanced-filter-panel'
+import { ComprehensiveReports } from '@/components/comprehensive-reports'
+import { Permission } from '@/types/auth'
 
 interface CallRecord {
   id: string
@@ -78,6 +84,14 @@ interface AgentStats {
 }
 
 export default function CallCenterDashboard() {
+  return (
+    <ProtectedRoute requiredPermissions={[Permission.VIEW_DASHBOARD]}>
+      <DashboardContent />
+    </ProtectedRoute>
+  )
+}
+
+function DashboardContent() {
   const [callRecords, setCallRecords] = useState<CallRecord[]>([])
   const [paymentRecords, setPaymentRecords] = useState<PaymentRecord[]>([])
   const [agentStats, setAgentStats] = useState<AgentStats[]>([])
@@ -521,6 +535,7 @@ export default function CallCenterDashboard() {
             </p>
           </div>
           <div className="flex items-center space-x-2">
+            <UserInfo />
             <Popover>
               <PopoverTrigger asChild>
                 <Button variant="outline" className="w-[240px] justify-start text-left font-normal">
@@ -715,14 +730,22 @@ export default function CallCenterDashboard() {
         </div>
 
         {/* Main Content Tabs */}
-        <Tabs defaultValue="agents" className="space-y-4">
+        <Tabs defaultValue="realtime" className="space-y-4">
           <TabsList>
+            <TabsTrigger value="realtime">Real-time</TabsTrigger>
             <TabsTrigger value="agents">Agent Performance</TabsTrigger>
             <TabsTrigger value="conversions">Payment Conversions</TabsTrigger>
             <TabsTrigger value="charts">Analytics</TabsTrigger>
+            <TabsTrigger value="reports">Reports</TabsTrigger>
             <TabsTrigger value="export">Export</TabsTrigger>
             <TabsTrigger value="calls">Call Details</TabsTrigger>
           </TabsList>
+
+          <TabsContent value="realtime" className="space-y-4">
+            <ProtectedRoute requiredPermissions={[Permission.VIEW_REALTIME]}>
+              <RealTimeMonitor />
+            </ProtectedRoute>
+          </TabsContent>
 
           <TabsContent value="agents" className="space-y-4">
             <Card>
@@ -817,12 +840,20 @@ export default function CallCenterDashboard() {
             </Card>
           </TabsContent>
 
+          <TabsContent value="reports" className="space-y-4">
+            <ProtectedRoute requiredPermissions={[Permission.VIEW_REPORTS]}>
+              <ComprehensiveReports />
+            </ProtectedRoute>
+          </TabsContent>
+
           <TabsContent value="export" className="space-y-4">
-            <ExportPanel 
-              callRecords={filteredCalls}
-              paymentRecords={filteredPayments}
-              agentStats={filteredAgentStats}
-            />
+            <ProtectedRoute requiredPermissions={[Permission.EXPORT_DATA]}>
+              <ExportPanel 
+                callRecords={filteredCalls}
+                paymentRecords={filteredPayments}
+                agentStats={filteredAgentStats}
+              />
+            </ProtectedRoute>
           </TabsContent>
 
           <TabsContent value="calls" className="space-y-4">
