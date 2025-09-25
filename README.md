@@ -34,6 +34,13 @@ A comprehensive, enterprise-grade call center analytics dashboard built with Nex
 - **Lazy Loading**: Optimized component loading for better UX
 - **Responsive Design**: Mobile-first approach with adaptive layouts
 
+### Desktop Application
+- **Cross-Platform Desktop App**: Native executable for Windows, macOS, and Linux
+- **Electron Integration**: Built with Electron + Next.js using Nextron
+- **Native Features**: Custom title bar, file dialogs, window controls
+- **Offline Support**: Works without internet connection
+- **System Integration**: Native menus, keyboard shortcuts, system tray
+
 ## 🛠️ Technology Stack
 
 ### Frontend
@@ -247,6 +254,31 @@ npm run build
 # Start the production server
 npm start
 ```
+
+### Desktop Application
+For the desktop version, switch to the `electron-desktop-app` branch:
+
+```bash
+# Switch to desktop branch
+git checkout electron-desktop-app
+
+# Install dependencies
+npm install
+npm run electron:postinstall
+
+# Run in development mode
+npm run electron:dev
+
+# Build executable
+npm run electron:build
+```
+
+The desktop application creates native executables for:
+- **Windows**: .exe files
+- **macOS**: .app and .dmg files  
+- **Linux**: .AppImage files
+
+See [ELECTRON_README.md](ELECTRON_README.md) for detailed desktop app documentation.
 
 ## 🧪 Testing
 
