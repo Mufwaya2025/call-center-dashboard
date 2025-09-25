@@ -1,0 +1,35 @@
+appId: com.callcenter.analytics
+productName: Call Center Analytics Dashboard
+copyright: Copyright © 2025 Call Center Analytics
+directories:
+  output: dist
+  buildResources: resources
+files:
+  - from: .
+    filter:
+      - package.json
+      - app
+      - src
+      - public
+      - prisma
+      - next.config.ts
+      - tailwind.config.ts
+      - tsconfig.json
+      - components.json
+      - postcss.config.mjs
+      - eslint.config.mjs
+      - server.ts
+mac:
+  category: public.app-category.business
+  target:
+    - dmg
+    - zip
+win:
+  target:
+    - nsis
+    - portable
+linux:
+  target:
+    - AppImage
+  category: Utility
+publish: null
