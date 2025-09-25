@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Center Dashboard - Download Center</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-top: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        .download-section {
+            margin-bottom: 30px;
+            padding: 25px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            background: #f9f9f9;
+        }
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 10px 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+        .download-btn:hover {
+            background: linear-gradient(45deg, #45a049, #4CAF50);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        }
+        .download-btn.secondary {
+            background: linear-gradient(45deg, #2196F3, #1976D2);
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+        }
+        .download-btn.secondary:hover {
+            background: linear-gradient(45deg, #1976D2, #2196F3);
+            box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4);
+        }
+        .instructions {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 5px solid #2196F3;
+        }
+        .features {
+            background: #e8f5e8;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 5px solid #4CAF50;
+        }
+        .features ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        .features li {
+            margin: 8px 0;
+            font-size: 1.1em;
+        }
+        .tech-stack {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 5px solid #ff9800;
+        }
+        .status {
+            background: #f3e5f5;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+            color: #7b1fa2;
+        }
+        .file-info {
+            background: #e1f5fe;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: monospace;
+        }
+        .port-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .port-option {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            .port-options {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📞 Call Center Dashboard</h1>
+        
+        <div class="status">
+            ✅ Project Ready for Download!
+        </div>
+
+        <div class="download-section">
+            <h2>📥 Download Options</h2>
+            <p>Choose the download method that works best for your connection:</p>
+            
+            <h3>🎯 Recommended: Complete Zip File</h3>
+            <div class="file-info">
+                <strong>File:</strong> call-center-dashboard.zip<br>
+                <strong>Size:</strong> 1.1MB<br>
+                <strong>Contents:</strong> Complete project with all features
+            </div>
+            
+            <div class="port-options">
+                <div class="port-option">Port 9000 (Recommended)</div>
+                <div class="port-option">Port 8080</div>
+                <div class="port-option">Port 8000</div>
+            </div>
+            
+            <a href="http://21.0.6.133:9000/call-center-dashboard.zip" class="download-btn">Download (Port 9000)</a>
+            <a href="http://21.0.6.133:8080/call-center-dashboard.zip" class="download-btn secondary">Download (Port 8080)</a>
+            <a href="http://21.0.6.133:8000/call-center-dashboard.zip" class="download-btn secondary">Download (Port 8000)</a>
+            
+            <h3>🔄 Alternative: Split Parts (for slow connections)</h3>
+            <p>Download in smaller chunks (200KB each):</p>
+            <a href="http://21.0.6.133:9000/project_chunk_aa" class="download-btn secondary">Part 1</a>
+            <a href="http://21.0.6.133:9000/project_chunk_ab" class="download-btn secondary">Part 2</a>
+            <a href="http://21.0.6.133:9000/project_chunk_ac" class="download-btn secondary">Part 3</a>
+            <a href="http://21.0.6.133:9000/project_chunk_ad" class="download-btn secondary">Part 4</a>
+            <a href="http://21.0.6.133:9000/project_chunk_ae" class="download-btn secondary">Part 5</a>
+            <a href="http://21.0.6.133:9000/project_chunk_af" class="download-btn secondary">Part 6</a>
+            
+            <p><small><strong>Note:</strong> After downloading all parts, combine them: <code>cat project_chunk_* > call-center-dashboard.zip</code></small></p>
+        </div>
+
+        <div class="instructions">
+            <h2>🚀 Setup Instructions</h2>
+            <ol>
+                <li><strong>Extract the files:</strong> <code>unzip call-center-dashboard.zip</code></li>
+                <li><strong>Navigate to project:</strong> <code>cd call-center-dashboard</code></li>
+                <li><strong>Install dependencies:</strong> <code>npm install</code></li>
+                <li><strong>Set up database:</strong> <code>npm run db:push</code></li>
+                <li><strong>Start development server:</strong> <code>npm run dev</code></li>
+                <li><strong>Open browser:</strong> <code>http://localhost:3000</code></li>
+            </ol>
+        </div>
+
+        <div class="features">
+            <h2>✨ Project Features</h2>
+            <ul>
+                <li>📊 <strong>Call Center Analytics Dashboard</strong> - Comprehensive analytics interface</li>
+                <li>👥 <strong>Agent Performance Monitoring</strong> - Real-time performance metrics</li>
+                <li>💰 <strong>Payment Conversion Tracking</strong> - Monitor payment success rates</li>
+                <li>📈 <strong>Interactive Charts</strong> - Visual data representations</li>
+                <li>🔄 <strong>Flexible CSV Column Mapping</strong> - Support for various PBX systems</li>
+                <li>📤 <strong>Data Export Functionality</strong> - Export in multiple formats</li>
+                <li>🎨 <strong>Modern UI Design</strong> - Built with Tailwind CSS and shadcn/ui</li>
+                <li>📱 <strong>Responsive Design</strong> - Works on all devices</li>
+                <li>🌙 <strong>Dark Mode Support</strong> - Easy on the eyes</li>
+            </ul>
+        </div>
+
+        <div class="tech-stack">
+            <h2>🛠 Technology Stack</h2>
+            <ul>
+                <li><strong>Framework:</strong> Next.js 15 with App Router</li>
+                <li><strong>Language:</strong> TypeScript 5</li>
+                <li><strong>Styling:</strong> Tailwind CSS 4 with shadcn/ui</li>
+                <li><strong>Database:</strong> SQLite with Prisma ORM</li>
+                <li><strong>Charts:</strong> Recharts</li>
+                <li><strong>State Management:</strong> Zustand & React Query</li>
+                <li><strong>Authentication:</strong> NextAuth.js (available)</li>
+            </ul>
+        </div>
+
+        <div class="download-section">
+            <h2>💡 Troubleshooting</h2>
+            <p><strong>If downloads fail:</strong></p>
+            <ul>
+                <li>Try different ports (9000, 8080, 8000)</li>
+                <li>Use the split parts method for slower connections</li>
+                <li>Check your firewall settings</li>
+                <li>Try using curl or wget from command line</li>
+            </ul>
+            <p><strong>Need help?</strong> The project includes comprehensive documentation and setup instructions.</p>
+        </div>
+    </div>
+</body>
+</html>

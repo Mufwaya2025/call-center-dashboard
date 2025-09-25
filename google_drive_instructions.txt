@@ -1,0 +1,82 @@
+=== GOOGLE DRIVE UPLOAD INSTRUCTIONS ===
+
+Since automatic upload is not working, here's how to manually upload the project to Google Drive:
+
+METHOD 1: DIRECT FILE ACCESS
+If you have access to this server:
+1. Navigate to: /home/z/my-project/
+2. Find the file: call-center-dashboard.zip (1.1MB)
+3. Copy it to your local machine
+4. Upload to Google Drive manually
+
+METHOD 2: USING SCP/SFTP
+If you have SSH access to this server:
+```bash
+# Copy the file to your local machine
+scp username@21.0.6.133:/home/z/my-project/call-center-dashboard.zip .
+
+# Or using SFTP
+sftp username@21.0.6.133
+get /home/z/my-project/call-center-dashboard.zip
+exit
+```
+
+METHOD 3: USING THE RUNNING HTTP SERVER
+Try downloading from:
+http://21.0.6.133:9000/call-center-dashboard.zip
+
+If that doesn't work, try these alternative URLs:
+- http://21.0.6.133:8080/call-center-dashboard.zip
+- http://21.0.6.133:8000/call-center-dashboard.zip
+
+METHOD 4: SPLIT FILE DOWNLOAD
+Download in smaller chunks:
+- http://21.0.6.133:9000/project_chunk_aa
+- http://21.0.6.133:9000/project_chunk_ab
+- http://21.0.6.133:9000/project_chunk_ac
+- http://21.0.6.133:9000/project_chunk_ad
+- http://21.0.6.133:9000/project_chunk_ae
+- http://21.0.6.133:9000/project_chunk_af
+
+After downloading all chunks, combine them:
+```bash
+cat project_chunk_* > call-center-dashboard.zip
+```
+
+=== PROJECT INFORMATION ===
+File: call-center-dashboard.zip
+Size: 1.1MB
+Contents: Complete Next.js call center dashboard project
+
+Features included:
+- Call center analytics dashboard
+- Agent performance monitoring
+- Payment conversion tracking
+- Interactive charts and visualizations
+- Flexible CSV column mapping system
+- Data export functionality
+- Modern UI with Tailwind CSS
+- Responsive design and dark mode support
+
+=== SETUP INSTRUCTIONS ===
+After downloading:
+1. unzip call-center-dashboard.zip
+2. cd call-center-dashboard
+3. npm install
+4. npm run db:push
+5. npm run dev
+6. Open http://localhost:3000
+
+=== IF YOU NEED HELP ===
+If none of these methods work, please let me know:
+- Do you have SSH access to this server?
+- What's your preferred method of file transfer?
+- Do you need the files in a different format?
+- Can you provide access to your Google Drive for direct upload?
+
+=== ALTERNATIVE CLOUD SERVICES ===
+If Google Drive doesn't work, I can try:
+- Dropbox
+- OneDrive
+- GitHub (for the source code)
+- Any other cloud service you prefer
